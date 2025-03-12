@@ -1,0 +1,63 @@
+Review 1) [Unnecessary Repeated Conditions] : The code has a high cognitive complexity. Please refactor like below
+public bool IsShopOpen(string day)
+{
+    if (string.IsNullOrEmpty(day)) 
+        return false; // 1 Congitive Complexity.
+ 
+    return day.Equals("friday", StringComparison.OrdinalIgnoreCase) ||
+           day.Equals("saturday", StringComparison.OrdinalIgnoreCase) ||
+           day.Equals("sunday", StringComparison.OrdinalIgnoreCase);
+}
+refactored cognitive complexity: 1
+----------------------------------------------------------------------------------------------------------------------------------------
+review 3: Invert if statements something like
+public long Fibonacci(int n)
+{
+    if (n <= 1) return n;
+    if (n >= 50)
+    {
+        throw new System.Exception("Not supported");
+    }
+    return Fibonacci(n - 1) + Fibonacci(n - 2);
+}
+refactored cognitive complexity: 2
+----------------------------------------------------------------------------------------------------------------------------------------
+review-4) Index based iteration, Delayed usage of li, Multiple calls before usage  --> this increases the cognitive complexity. 
+current cognitive complecity: 4
+we can reduce this by Better naming, Using it immediately after declaration, eliminating indexing.
+we can refactor the code as follows:
+var locations = new[] { "Austin", "New York", "San Francisco" };
+ 
+foreach (var location in locations)
+{
+    DoStuff();
+    DoSomeOtherStuff();
+    Dispatch(location);
+}
+refactored cognitive complexity: 1
+----------------------------------------------------------------------------------------------------------------------------------------
+review 5: Remove hard code value and move it to
+const int AdminUserRole = 8; 
+if (userRole == AdminUserRole) // Check if Admin 
+{
+ 
+}
+refactored cognitive complexity: 1
+----------------------------------------------------------------------------------------------------------------------------------------
+Review 6)
+6.1 Prefixing every property with Car is redundant inside the Car class. Instead of CarMake, CarModel, and CarColor, use Make, Model, and Color.
+6.2  Add a Constructor for Better Encapsulation
+6.3 If Make and Model don’t change after object creation, mark them as readonly.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+review-9) Ternary Operator (?:) , Method Call (string.IsNullOrEmpty(name))  introduces cognitive load as it represents a conditional check.
+current cognitive complexity: 2
+ 
+Uses  ?? (Null-Coalescing Operator) and removing explicit check since the default behavior of ?? handles null.
+public void CreateMicrobrewery(string name = null)
+{
+    var breweryName = name ?? "Hipster Brew Co.";
+    // ...
+}
+refactored cognitive complexity: 1
+----------------------------------------------------------------------------------------------------------------------------------------
