@@ -1,0 +1,7 @@
+Review 1) [C# Naming Conventions] Rename d to a meaningful name like elapsedTimeInDays to improve code readability and maintainability.
+Review 2) [C# Naming Conventions] Rename dataFromDb to a more descriptive name like employees or employeeList to clearly indicate the data being retrieved. Use List<Employee> directly instead of var. Please remove the code comment.
+Review 3) The variable names use Hungarian notation (prefixes like i, str, d), to indicate type, which is unnecessary . No initialization of variables.
+Review 4) [Unnecessary Parameter] To determine Shop Open we do not require 'amount' to be passed as a paramter. [C# Parameter Naming Conventions] Rename parameters pDay to meaningful and properly formatted names, such as day.
+Review 5)  Consistent Naming Conventions:	Please rename the variables properly. Use method body or provide with Abstract.
+Review-6) Hungarian Notation: sWorkDateuses the prefix s, which is unnecessary and does not add clarity. Datetimeis incorrect; the correct C# type is DateTime.
+Review 7) [C# Naming Conventions]  Variable employeephone is not in camelcase. Please rename to employeePhone. Also you can change var to string (Consider the +91..)   
